@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "cheerio": "^1.0.0-rc.5",
+    "code-protect": "^1.0.3",
+    "console": "^0.7.2",
+    "cryptolens": "^1.0.2",
+    "delay": "^5.0.0",
+    "figlet": "^1.5.0",
+    "fs": "^0.0.1-security",
+    "i": "^0.3.6",
+    "innertext": "^1.0.3",
+    "it": "^1.1.1",
+    "moment": "^2.29.1",
+    "node-fetch": "^2.6.1",
+    "node-random-name": "^1.0.1",
+    "os": "^0.1.1",
+    "package.json": "^2.0.1",
+    "puppeteer": "^7.0.4",
+    "puppeteer-extra": "^3.1.16",
+    "puppeteer-extra-plugin-stealth": "^2.7.5",
+    "qrcode-terminal": "^0.12.0",
+    "readline-sync": "^1.4.10",
+    "string": "^3.3.3",
+    "whatsapp-web.js": "^1.12.4"
+  }
+}
