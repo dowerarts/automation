@@ -130,7 +130,6 @@ $getAudio = curl('https://yt1s.com/api/ajaxConvert/convert', $data, $headers);
 $linkdownloadAudio = get_between($getAudio[1], '"dlink":"', '"');
 $linkdownloadAudio = str_replace('\\','',$linkdownloadAudio);
 
-
 if ($title) {
     echo "[+] Sedang Download $title Author : $author\n";
 $downloadAudio = trim(file_get_contents($linkdownloadAudio));
@@ -142,6 +141,7 @@ $filename = 'audio/'.$title.'.mp3';
 $save = file_put_contents($filename, $downloadAudio);
 echo "[+] Sukses Save File Name $title.mp3 Di Folder Audio\n";
 $bytes = filesize('audio/'.$title.'.mp3');
+$audioSize= formatSizeUnits($bytes);
 echo "[+] Total Size $audioSize\n";
 } else if($title2) {
     echo "[+] Sedang Download $title2 Author : $author\n";
