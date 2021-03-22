@@ -9,6 +9,7 @@ echo "\e[1;31;40m| |____| | |  __/ (_| | | |_| |___| (_| | | | (_| | |____| | | 
 
 echo "Information : \e[1;31;40mCC Die Save TO cc-die.txt\e[0m\n";
 echo "Information : \e[0;32;40mCC Live Save TO cc-live.txt\e[0m\n";
+echo "Information : \e[0;32;40mCC Recheck Save TO cc-recheck.txt\e[0m\n";
 echo "Information : CC No Balance Save TO cc-nobalance.txt\e[0m\n\n\n";
 
 error_reporting(0);
@@ -54,6 +55,15 @@ foreach (explode("\n", str_replace("\r", "", file_get_contents($xyz))) as $key =
         echo "\e[1;31;40m[$no/$jml] [Die] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
         fwrite(fopen("cc-die.txt", "a"), "$card|$month|$year|$cvv Bin Info : Bin Info : $bin\n");
 
+    } else if (strpos($checkCC[1], 'recheck')) {
+        echo "\e[1;34;40m[$no/$jml] [recheck] $card|$month|$year|$cvv Bin Info : $bin\n";
+        fwrite(fopen("cc-recheck.txt", "a"), "$card|$month|$year|$cvv Bin Info : Bin Info : $bin\n");
+    } else if (strpos($checkCC[1], 'Not Support')) {
+        echo "\e[1;34;40m[$no/$jml] [Not Support] $card|$month|$year|$cvv Bin Info : $bin\n";
+    } else if (strpos($checkCC[1], 'Incorrect Number')) {
+        echo "\e[1;35;40m[$no/$jml] [Incorrect Number] $card|$month|$year|$cvv Bin Info : $bin\n";
+    } else {
+        echo "\e[1;37;40m[$no/$jml] [error] $card|$month|$year|$cvv Bin Info : $bin\n";
     }
     $no++;
 }
