@@ -61,6 +61,8 @@ foreach (explode("\n", str_replace("\r", "", file_get_contents($xyz))) as $key =
         fwrite(fopen("cc-recheck.txt", "a"), "$card|$month|$year|$cvv Bin Info : $bin\n");
     } else if (strpos($checkCC[1], 'Invalid CVC')) {
         echo "\e[1;31;40m[$no/$jml] [Invalid CVC] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
+    } else if (strpos($checkCC[1], 'Expire Year')) {
+        echo "\e[1;34;40m[$no/$jml] [Expire Year] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
     } else {
         echo "\e[1;37;40m[$no/$jml] [error] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
     }
