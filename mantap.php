@@ -49,21 +49,21 @@ foreach (explode("\n", str_replace("\r", "", file_get_contents($xyz))) as $key =
         echo "\e[0;32;40m[$no/$jml] [Live] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
         fwrite(fopen("cc-live.txt", "a"), "$card|$month|$year|$cvv Bin Info : $bin\n");
     } else if (strpos($checkCC[1], 'insufficient funds.')) {
-        echo "[$no/$jml] [insufficient funds.] $card|$month|$year|$cvv Bin Info : $bin\n";
+        echo "\e[1;35;40m[$no/$jml] [insufficient funds.] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
         fwrite(fopen("cc-nobalance.txt", "a"), "$card|$month|$year|$cvv Bin Info : $bin\n");
     } else if (strpos($checkCC[1], 'Die')) {
         echo "\e[1;31;40m[$no/$jml] [Die] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
         fwrite(fopen("cc-die.txt", "a"), "$card|$month|$year|$cvv Bin Info : Bin Info : $bin\n");
 
     } else if (strpos($checkCC[1], 'recheck')) {
-        echo "\e[1;34;40m[$no/$jml] [recheck] $card|$month|$year|$cvv Bin Info : $bin\n";
+        echo "\e[1;34;40m[$no/$jml] [recheck] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
         fwrite(fopen("cc-recheck.txt", "a"), "$card|$month|$year|$cvv Bin Info : Bin Info : $bin\n");
     } else if (strpos($checkCC[1], 'Not Support')) {
-        echo "\e[1;34;40m[$no/$jml] [Not Support] $card|$month|$year|$cvv Bin Info : $bin\n";
+        echo "\e[1;34;40m[$no/$jml] [Not Support] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
     } else if (strpos($checkCC[1], 'Incorrect Number')) {
-        echo "\e[1;35;40m[$no/$jml] [Incorrect Number] $card|$month|$year|$cvv Bin Info : $bin\n";
+        echo "\e[1;35;40m[$no/$jml] [Incorrect Number] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
     } else {
-        echo "\e[1;37;40m[$no/$jml] [error] $card|$month|$year|$cvv Bin Info : $bin\n";
+        echo "\e[1;37;40m[$no/$jml] [error] $card|$month|$year|$cvv Bin Info : $bin\e[0m\n";
     }
     $no++;
 }
