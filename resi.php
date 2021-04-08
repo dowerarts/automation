@@ -1,7 +1,7 @@
 <?php
 awal:
 echo "[+] Created By Apri Amsyah\n\n";
-echo "{1} Wahana Resi Validator And Extrap\n{2} USPS Resi Validator And Extrap\n{3} DHL Resi Validator And Extrap\n\n";
+echo "{1} Wahana Resi Validator And Extrap\n{2} USPS Resi Validator And Extrap\n{3} Fedex Resi Validator And Extrap\n\n";
 echo "Pilih Apa ? ";
 $pilihan = trim(fgets(STDIN));
 echo "\n";
