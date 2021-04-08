@@ -62,7 +62,7 @@ $angka = acak(8);
     $content = get_between($content, 'Content-Length: ', "\n");
     if ($content > 10100) {   
         echo "[+] No Resi $resi Valid\n";
-        fwrite(fopen('dhl.txt', 'a'), "$resi\n");
+        fwrite(fopen('fedex.txt', 'a'), "$resi\n");
     } else {
         echo "[+] No Resi $resi Tidak Valid\n";
     }
